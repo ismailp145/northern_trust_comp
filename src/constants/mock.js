@@ -1,3 +1,1 @@
-export const mockSearchResults = {
-    
-}
+export const mockSearchResults = {};
