@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        white: "white",
+        white: "#FFFFFF",
+        blue: "#1E1E2F", // Change the hex code to a lighter shade if desired.
         none: "none",
       },
       borderWidth: {
