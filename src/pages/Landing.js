@@ -2,10 +2,9 @@ import React from 'react';
 
 const Landing = () => {
   return (
-    <div>
-      <h1>Landing Page</h1>
-      <p>Welcome to the Landing page!</p>
-    </div>
+    <main className="bg-blue w-full flex flex-col content-center items-center relative text-black font-quicksand">
+      <div className="w-screen h-screen bg-blue fixed -z-10"></div>
+    </main>
   );
 };
 
