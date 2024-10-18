@@ -26,6 +26,11 @@ function Navigation() {
             Currency Converter
           </Link>
         </li>
+        <li>     
+          <Link to="/Stats" className="hover:text-gray-400">
+            Stats
+          </Link>
+          </li>   
       </ul>
     </nav>
   );
