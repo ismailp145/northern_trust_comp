@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1E1E2F; /* Dark background */
+    color: #FFFFFF; /* White text */
+    margin: 0;
+}
+
+.currency-container h1 {
+    font-size: 2rem; /* Adjust the size as needed */
+    font-weight: bold; /* Makes the text bold */
+    text-align: center; /* Center the header */
+    margin-bottom: 10px; /* Adds space below the header */
+    color: #FFFFFF; /* Ensure the text color is white for contrast */
+}
+
+.horizontal-container {
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping to create rows */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Adds space between currency boxes */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    padding: 20px;
+    background-color: #1E1E2F; /* Dark background for the container */
+    border-radius: 15px;
+}
+
+.currency {
+    display: flex;
+    flex-direction: column; /* Keep stacking vertically inside the currency box */
+    align-items: center; /* Center items in each currency box */
+    background: linear-gradient(to left, lightgrey, white); /* Gradient from light grey to white */
+    border-radius: 15px; /* More rounded corners for a smoother look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow for depth */
+    padding: 20px;
+    text-align: center;
+    width: calc(50% - 20px); /* 50% width minus gap for two boxes in a row */
+    max-width: 45%; /* Limits the max width to keep a consistent number of items in each row */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.currency-container {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add padding */
+    width: 90%; /* Adjust width as needed */
+    max-width: 1200px; /* Max width for better layout */
+    margin: 20px auto; /* Center the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Optional: border to enhance the glass effect */
+}
+
+
+.currency:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.currency h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.currency p {
+    margin: 5px 0;
+    color: #666; /* Slightly lighter color for text */
+}
+
+.currency .price {
+    font-size: 1.5rem; /* Larger font size for price */
+    color: #007BFF; /* Color for price */
+}
+
+.currency .change {
+    font-size: 1rem; /* Normal font size for change */
+    color: #FF6B6B; /* Red for negative changes */
+}
+
+/* Highlight positive changes */
+.currency .change.positive {
+    color: #28A745; /* Green for positive changes */
+}
