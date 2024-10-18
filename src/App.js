@@ -6,6 +6,7 @@ import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CurrencyConverter from "./components/CurrencyConverter";
+import Stats from './components/Stats';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="CurrencyConverter" element={<CurrencyConverter />} />
+        <Route path="/CurrencyConverter" element={<CurrencyConverter />} />
+        <Route path="/Stats" element={<Stats />} />
       </Routes>
     </Router>
   );
