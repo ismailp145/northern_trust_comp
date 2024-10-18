@@ -1,6 +1,6 @@
 // src/components/Navigation.js
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Navigation() {
   return (
@@ -19,6 +19,11 @@ function Navigation() {
         <li>
           <Link to="/contact" className="hover:text-gray-400">
             Contact
+          </Link>
+        </li>
+        <li>
+          <Link to="/CurrencyConverter" className="hover:text-gray-400">
+            Currency Converter
           </Link>
         </li>
       </ul>
