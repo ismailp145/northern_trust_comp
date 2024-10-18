@@ -5,7 +5,7 @@ import Navigation from "./components/Navigation";
 import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import CurrencyConverter from "./constants/CurrencyConverter";
+import CurrencyConverter from "./components/CurrencyConverter";
 
 function App() {
   return (

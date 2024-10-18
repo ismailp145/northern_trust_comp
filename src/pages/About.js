@@ -1,12 +1,12 @@
-import React from 'react';
+import RealTimeExchangeRates from '../components/RealTimeExchangeRates';
 
-const About = () => {
+function AboutPage() {
   return (
     <div>
       <h1>About Page</h1>
-      <p>This is the about page.</p>
+      <RealTimeExchangeRates />
     </div>
   );
-};
+}
 
-export default About;
+export default AboutPage;
