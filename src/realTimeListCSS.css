@@ -1,0 +1,67 @@
+.real-time-list-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .real-time-list-container h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .real-time-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .real-time-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+  }
+  
+  .real-time-list-item:hover {
+    transform: translateY(-2px);
+  }
+  
+  .currency-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .currency-code {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .currency-rate {
+    font-size: 16px;
+    color: #888;
+  }
+  
+  .details-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .details-button:hover {
+    background-color: #0056b3;
+  }
+  

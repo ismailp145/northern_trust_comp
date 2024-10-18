@@ -1,0 +1,23 @@
+{
+    "1": [
+      {
+        "code": "EUR",
+        "current_value": 5.75
+      },
+      {
+        "code": "USD",
+        "current_value": 3.25
+      }
+    ],
+    "2": [
+      {
+        "code": "JPY",
+        "current_value": 8.10
+      },
+      {
+        "code": "CAD",
+        "current_value": 2.50
+      }
+    ]
+  }
+  

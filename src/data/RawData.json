@@ -1,0 +1,22 @@
+{
+    "users": [
+      {
+        "id": "1",
+        "Fname": "Alice",
+        "Lname": "Smith"
+      }
+    ],
+    "currencies": {
+      "1": [
+        {
+          "code": "EUR",
+          "current_value": 5.75
+        },
+        {
+          "code": "USD",
+          "current_value": 3.25
+        }
+      ]
+    }
+  }
+  
