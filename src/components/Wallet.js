@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../colorCSS.css'; // Adjust the path if needed
 import { motion } from 'framer-motion';
+import data from '../data/RawData.json'; // Adjust the path if needed
 
 function Wallet() {
     // State to store the currencies you own (left-side container)
@@ -9,42 +10,38 @@ function Wallet() {
     // State to store available currencies with prices (right-side container)
     const [availableCurrencies, setAvailableCurrencies] = useState([]);
 
-    // Hardcoded data for available currencies (can later be fetched from API)
-    const availableCurrencyData = [
-        { name: 'USD', price: 1.00 },
-        { name: 'EUR', price: 1.20 },
-        { name: 'JPY', price: 0.009 },
-        { name: 'MXN', price: 19.00 },
-        { name: 'GBP', price: 1.40 },
-        { name: 'CAD', price: 0.78 },
-        // { name: 'SNG', price: 1.30 },
-        // { name: 'EGP', price: 0.18 }
-    ];
-
     // Simulate an API call to get owned currencies from the database
     useEffect(() => {
-        // Simulate fetching owned currencies from an API or database
-        const initialOwnedCurrencies = [
-            { name: 'USD', amount: 1000 },
-            { name: 'EUR', amount: 850 }
-        ];
+        // Fetch user's owned currencies using the data from JSON
+        const userId = "1"; // Replace with dynamic user ID if needed
+        const initialOwnedCurrencies = data.currencies[userId].map(currency => ({
+            name: currency.code,
+            amount: currency.current_value
+        }));
 
         setOwnedCurrencies(initialOwnedCurrencies);
+
+        // Set available currencies (you can update this if needed)
+        const availableCurrencyData = [
+            { name: 'USD', price: 1.00 },
+            { name: 'EUR', price: 1.20 },
+            { name: 'JPY', price: 0.009 },
+            { name: 'MXN', price: 19.00 },
+            { name: 'GBP', price: 1.40 },
+            { name: 'CAD', price: 0.78 }
+        ];
         setAvailableCurrencies(availableCurrencyData);
     }, []);
 
     // Function to add a currency to owned currencies
     const addCurrency = (currency) => {
-        // Check if the currency is already owned
         const existingCurrency = ownedCurrencies.find(c => c.name === currency.name);
         if (existingCurrency) {
-            // Update the amount for the owned currency
             const updatedCurrencies = ownedCurrencies.map(c =>
-                c.name === currency.name ? { ...c, amount: c.amount + 100 } : c
+                c.name === currency.name ? { ...c, amount: c.amount + 1.00 } : c
             );
             setOwnedCurrencies(updatedCurrencies);
         } else {
-            // Add the new currency to the owned currencies
             setOwnedCurrencies([...ownedCurrencies, { name: currency.name, amount: 100 }]);
         }
     };
@@ -59,7 +56,7 @@ function Wallet() {
         <div className="wallet-container flex">
             {/* Left Container - Owned Currencies */}
             <div className="owned-currencies-container flex-1">
-                <h1 className="text-2xl mb-4">Perosnal Wallet</h1>
+                <h1 className="text-2xl mb-4">Personal Wallet</h1>
                 <div className="currency-list flex flex-col space-y-4">
                     {ownedCurrencies.map((currency, index) => (
                         <motion.div
