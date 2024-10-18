@@ -31,6 +31,11 @@ function Navigation() {
             Stats
           </Link>
           </li>   
+          <li>     
+          <Link to="/Chart" className="hover:text-gray-400">
+            Chart
+          </Link>
+          </li>   
       </ul>
     </nav>
   );
