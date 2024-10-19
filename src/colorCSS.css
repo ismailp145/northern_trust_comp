@@ -1,192 +1,208 @@
 /* Container for the entire wallet, divided into left and right sections */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  justify-content: center;
+  align-items: center;
+}
 .wallet-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 20px;
-    background: linear-gradient(to right, #2d283e, #7a1ea2 50%, #2d283e); /* Gradient from dark to purple in the middle back to dark */
-    border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  padding: 20px;
+  background: linear-gradient(
+    to right,
+    #2d283e,
+    #7a1ea2 50%,
+    #2d283e
+  ); /* Gradient from dark to purple in the middle back to dark */
+  border-radius: 10px;
+  height: 100%; /* Take up the entire height of the page */
+  width: 100%; /* Take up the entire width of the page */
+  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+  overflow: hidden; /* Hide any overflow content */
+  margin-bottom: 100px;
 }
 /* Left Container - Owned Currencies */
 /* Left Container - Owned Currencies */
 .owned-currencies-container {
-    background-color: rgba(30, 30, 47, 0.5); /* Semi-transparent background */
-    padding: 10px; /* Reduced padding for a tighter fit */
-    border-radius: 10px;
-    width: 45%; /* Adjust as needed */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    backdrop-filter: blur(10px); /* Blur effect for glass look */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    max-height: 500px; /* Set a maximum height for scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
+  background-color: rgba(30, 30, 47, 0.5); /* Semi-transparent background */
+  padding: 10px; /* Reduced padding for a tighter fit */
+  border-radius: 10px;
+  width: 45%; /* Adjust as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  backdrop-filter: blur(10px); /* Blur effect for glass look */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  max-height: 500px; /* Set a maximum height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 /* Header in the owned/available currencies containers */
 h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #FFFFFF;
-    text-align: center;
-    margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* Currency Item - Left */
 .currency-item {
-    background-color: #2A2A3B; /* Darker background for individual currency items */
-    border-radius: 10px;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    transition: transform 0.3s ease; /* Smooth hover effect */
-    margin-bottom: 15px; /* Adds spacing between items */
+  background-color: #2a2a3b; /* Darker background for individual currency items */
+  border-radius: 10px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+  margin-bottom: 15px; /* Adds spacing between items */
 }
 
 /* Hover effect for owned currencies */
 .currency-item:hover {
-    transform: translateY(-5px); /* Slight lift effect on hover */
+  transform: translateY(-5px); /* Slight lift effect on hover */
 }
 
 /* Remove Button */
 .remove-button {
-    background: none;
-    border: none;
-    color: #FF6B6B; /* Red color for remove button */
-    font-size: 0.9rem;
-    cursor: pointer;
+  background: none;
+  border: none;
+  color: #ff6b6b; /* Red color for remove button */
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 
 /* Right Container - Available Currencies */
 .available-currencies-container {
-    background-color: rgba(30, 30, 47, 0.5); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 10px;
-    width: 45%; /* Adjust width as needed */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Same shadow effect for consistency */
-    backdrop-filter: blur(10px); /* Blur effect for glass look */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent line breaks for horizontal scrolling */
+  background-color: rgba(30, 30, 47, 0.5); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%; /* Adjust width as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Same shadow effect for consistency */
+  backdrop-filter: blur(10px); /*Blur effect for glass look*/
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks for horizontal scrolling */
 }
 
 /* Currency List - Used for horizontal layout for available currencies */
 .available-currency-list {
-    display: flex; /* Use flexbox to align items in a row */
-    gap: 10px; /* Space between currency items */
+  display: flex; /* Use flexbox to align items in a row */
+  gap: 10px; /* Space between currency items */
 }
 
 /* Currency Item - Right */
 .currency {
-    background-color: #FFFFFF; /* Light background for available currencies */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    transition: transform 0.3s ease; /* Smooth hover effect */
-    text-align: center; /* Center text */
-    margin-bottom: 20px;
-    margin-left: 18px; /* Adds space between currency items */
+  background-color: #ffffff; /* Light background for available currencies */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+  text-align: center; /* Center text */
+  margin-bottom: 20px;
+  margin-left: 18px; /* Adds space between currency items */
 }
 
 /* Hover effect for available currencies */
 .currency:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+  transform: translateY(-5px); /* Lift effect on hover */
 }
 
 /* Currency Name */
 .currency h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333333; /* Darker text for contrast */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333333; /* Darker text for contrast */
 }
 
 /* Currency Price */
 .currency .price {
-    font-size: 1.2rem;
-    font-weight: normal;
-    color: #007BFF; /* Blue color for price */
-    margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #007bff; /* Blue color for price */
+  margin-bottom: 10px;
 }
 
 /* Add Button */
 .add-button {
-    background-color: #007BFF; /* Blue button color */
-    color: #FFFFFF;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+  background-color: #007bff; /* Blue button color */
+  color: #ffffff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 /* Hover effect for Add button */
 .add-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Utility classes for spacing */
 .mt-4 {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .mb-4 {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .text-lg {
-    font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 
 .text-xl {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .text-2xl {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 /* Flexbox and layout utility classes */
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .flex-1 {
-    flex: 1;
+  flex: 1;
 }
 
 .flex-col {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .flex-wrap {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .space-x-4 {
-    gap: 1rem; /* Horizontal gap for flex items */
+  gap: 1rem; /* Horizontal gap for flex items */
 }
 
 .space-y-4 {
-    gap: 2rem; /* Vertical gap for flex items */
+  gap: 2rem; /* Vertical gap for flex items */
 }
 
 /* Button styles for Remove */
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Dark background body style */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1E1E2F; /* Dark background */
-    color: #FFFFFF; /* White text */
-    margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e2f; /* Dark background */
+  color: #ffffff; /* White text */
+  margin: 0;
 
-
-
-
-
-    /* Scrollable data wrapper */
-.data-wrapper {
+  /* Scrollable data wrapper */
+  .data-wrapper {
     width: 90%;
     max-width: 1536px;
     margin-inline: auto;
@@ -195,22 +211,22 @@ body {
     margin-top: 5rem;
     overflow: hidden;
     mask-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 1) 20%,
-        rgba(0, 0, 0, 1) 80%,
-        rgba(0, 0, 0, 0)
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
     );
-}
+  }
 
-/* Scroll animation */
-@keyframes scrollLeft {
+  /* Scroll animation */
+  @keyframes scrollLeft {
     to {
-        left: -200px; /* Adjust this value based on your content width */
+      left: -200px; /* Adjust this value based on your content width */
     }
-}
+  }
 
-.cont {
+  .cont {
     width: 150px; /* Width of each currency item */
     height: 80px; /* Height of each currency item */
     background-color: transparent;
@@ -225,15 +241,31 @@ body {
     text-align: center;
     font-size: 35px; /* Font size for currency text */
     color: #f9f9f9; /* Text color */
-}
+  }
 
-/* Individual currency items with delays */
-.cont1 { animation-delay: calc(30s / 8 * (8 - 1) * -1); }
-.cont2 { animation-delay: calc(30s / 8 * (8 - 2) * -1); }
-.cont3 { animation-delay: calc(30s / 8 * (8 - 3) * -1); }
-.cont4 { animation-delay: calc(30s / 8 * (8 - 4) * -1); }
-.cont5 { animation-delay: calc(30s / 8 * (8 - 5) * -1); }
-.cont6 { animation-delay: calc(30s / 8 * (8 - 6) * -1); }
-.cont7 { animation-delay: calc(30s / 8 * (8 - 7) * -1); }
-.cont8 { animation-delay: calc(30s / 8 * (8 - 8) * -1); }
+  /* Individual currency items with delays */
+  .cont1 {
+    animation-delay: calc(30s / 8 * (8 - 1) * -1);
+  }
+  .cont2 {
+    animation-delay: calc(30s / 8 * (8 - 2) * -1);
+  }
+  .cont3 {
+    animation-delay: calc(30s / 8 * (8 - 3) * -1);
+  }
+  .cont4 {
+    animation-delay: calc(30s / 8 * (8 - 4) * -1);
+  }
+  .cont5 {
+    animation-delay: calc(30s / 8 * (8 - 5) * -1);
+  }
+  .cont6 {
+    animation-delay: calc(30s / 8 * (8 - 6) * -1);
+  }
+  .cont7 {
+    animation-delay: calc(30s / 8 * (8 - 7) * -1);
+  }
+  .cont8 {
+    animation-delay: calc(30s / 8 * (8 - 8) * -1);
+  }
 }

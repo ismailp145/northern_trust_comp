@@ -154,16 +154,8 @@ const currencies = [
 ];
 
 const API_KEY = "cc22212db121baed53a39781";
-const _API_URL = "https://v6.exchangerate-api.com/v6/${API_KEY}/pair/EUR/GBP";
-const apiKey = "YOUR-API-KEY"; // Replace with your actual API key
-const baseCurrency = "USD"; // Replace with your desired base currency code
-
-// const exchangeRates = {
-//   USD: { EUR: 0.92, GBP: 0.79, JPY: 143.86 },
-//   EUR: { USD: 1.09, GBP: 0.86, JPY: 156.71 },
-//   GBP: { USD: 1.27, EUR: 1.16, JPY: 182.24 },
-//   JPY: { USD: 0.007, EUR: 0.0064, GBP: 0.0055 },
-// };
+// const _API_URL = "https://v6.exchangerate-api.com/v6/${API_KEY}/pair/EUR/GBP";
+// const apiKey = "YOUR-API-KEY"; // Replace with your actual API key
 
 export default function CurrencyConverter() {
   const [amount, setAmount] = useState("");
@@ -172,7 +164,7 @@ export default function CurrencyConverter() {
   const [result, setResult] = useState("");
 
   const handleConvert = () => {
-    if (!amount || isNaN(Number(amount))) {
+    if (!amount || isNaN(Number(amount) || Number(amount) <= 0)) {
       setResult("Please enter a valid amount");
       return;
     }
@@ -183,7 +175,7 @@ export default function CurrencyConverter() {
     }
 
     fetch(
-      `https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${baseCurrency}/${toCurrency}/${amount}`
+      `https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${amount}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -196,10 +188,16 @@ export default function CurrencyConverter() {
         }
       })
       .catch((error) => console.error("Network Error:", error));
+  };
 
-    // const rate = exchangeRates[fromCurrency][toCurrency];
-    // const convertedAmount = (Number(amount) * rate).toFixed(2);
-    // setResult(`${convertedAmount} ${toCurrency}`);
+  const handleSubmit = () => {
+    const exchangeData = {
+      amount,
+      fromCurrency,
+      result,
+      toCurrency,
+    };
+    localStorage.setItem("exchangeData", JSON.stringify(exchangeData));
   };
 
   return (
@@ -245,6 +243,9 @@ export default function CurrencyConverter() {
       </div>
       <div>
         <button onClick={handleConvert}>Convert</button>
+      </div>
+      <div>
+        <button onClick={handleSubmit}>Submit Exchange</button>
       </div>
       {result && (
         <div className="result">
